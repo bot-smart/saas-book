@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · GitBook</title>
+        <title>回调参数 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ins_code.html" />
+    <link rel="next" href="rsp_code.html" />
     
+    
+    <link rel="prev" href="req_params.html" />
     
 
     </head>
@@ -87,7 +89,7 @@
         
         
     
-        <li class="chapter active" data-level="1.1" data-path="./">
+        <li class="chapter " data-level="1.1" data-path="./">
             
                 <a href="./">
             
@@ -126,7 +128,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="callback_data.html">
+        <li class="chapter active" data-level="1.4" data-path="callback_data.html">
             
                 <a href="callback_data.html">
             
@@ -182,7 +184,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >回调参数</a>
     </h1>
 </div>
 
@@ -197,9 +199,101 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8C1B;&#x542C;ai&#x5185;&#x5BB9;&#x5BA1;&#x6838;&#x4E13;&#x5BB6;">&#x8C1B;&#x542C;AI&#x5185;&#x5BB9;&#x5BA1;&#x6838;&#x4E13;&#x5BB6;</h1>
-<p>&#x63A5;&#x5165;&#x6587;&#x6863;</p>
-
+                                <p>&#x5E73;&#x53F0;&#x4F1A;&#x4EE5;post&#x65B9;&#x5F0F;&#x5F80;&#x56DE;&#x8C03;&#x5730;&#x5740;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
+<h2 id="&#x56DE;&#x8C03;&#x53C2;&#x6570;">&#x56DE;&#x8C03;&#x53C2;&#x6570;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x72B6;&#x6001;&#xFF0C;200:&#x6B63;&#x5E38;&#xFF0C;&#x5176;&#x4ED6;&#x503C;&#xFF1A;&#x8C03;&#x7528;&#x51FA;&#x9519;&#xFF0C;&#x53C2;&#x89C1;&#x54CD;&#x5E94;&#x8FD4;&#x56DE;&#x7801;&#x3002;</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>&#x7ED3;&#x679C;&#x8BF4;&#x660E;&#xFF0C;&#x5982;&#x679C;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x51FA;&#x9519;&#xFF0C;&#x90A3;&#x4E48;&#x8FD4;&#x56DE;&#x9519;&#x8BEF;&#x63CF;&#x8FF0;&#xFF0C;&#x6210;&#x529F;&#x8FD4;&#x56DE; ok&#x3002;</td>
+</tr>
+<tr>
+<td>result</td>
+<td>String</td>
+<td>&#x5177;&#x4F53;&#x56DE;&#x8C03;&#x6570;&#x636E;&#xFF0C;json&#x683C;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="result-&#x7ED3;&#x6784;">result &#x7ED3;&#x6784;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uniqId</td>
+<td>String</td>
+<td>&#x672C;&#x6B21;&#x8BF7;&#x6C42;&#x4EFB;&#x52A1;&#x7684;&#x8BE6;&#x60C5;ID&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x540E;&#x53F0;&#x67E5;&#x8BE2;</td>
+</tr>
+<tr>
+<td>taskId</td>
+<td>String</td>
+<td>&#x5BA1;&#x6838;&#x552F;&#x4E00;&#x4EFB;&#x52A1;ID</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>array</td>
+<td>&#x5206;&#x7C7B;&#x4FE1;&#x606F;&#xFF0C;json&#x7ED3;&#x6784;&#x3002;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="labels-&#x7ED3;&#x6784;">labels &#x7ED3;&#x6784;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td>String</td>
+<td>&#x5206;&#x7C7B;&#x7F16;&#x7801;&#xFF0C;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x53C2;&#x89C1;&#x5BF9;&#x5E94;&#x8868;</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>float</td>
+<td>&#x7F6E;&#x4FE1;&#x5EA6;&#x5206;&#x6570;&#xFF0C;0-1&#x4E4B;&#x95F4;&#x53D6;&#x503C;&#xFF0C;1&#x4E3A;&#x7F6E;&#x4FE1;&#x5EA6;&#x6700;&#x9AD8;&#xFF0C;0&#x4E3A;&#x7F6E;&#x4FE1;&#x5EA6;&#x6700;&#x4F4E;</td>
+</tr>
+</tbody>
+</table>
+<p>result&#x53C2;&#x6570;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code>{
+    &quot;uniqId&quot;:&quot;481db2bfa82d59c0745f4bf5a46f5f2d&quot;,
+    &quot;taskId&quot;:&quot;1112312415125153&quot;,
+    &quot;labels&quot;:[
+        {
+            &quot;label&quot;:100103,
+            &quot;labelEn&quot;:&quot;&#x6D89;&#x653F;&#x654F;&#x611F;&#x8BCD;&quot;,
+            &quot;rate&quot;:&quot;1&quot;
+        },
+        {
+            &quot;label&quot;:110101,
+            &quot;labelEn&quot;:&quot;&#x5973;&#x6027;&#x4F4E;&#x4FD7;&quot;,
+            &quot;rate&quot;:&quot;0.83561796&quot;
+        }
+    ]
+}
+</code></pre>
                                 
                                 </section>
                             
@@ -226,8 +320,12 @@
 
             
                 
+                <a href="req_params.html" class="navigation navigation-prev " aria-label="Previous page: 请求参数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="ins_code.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 分类编码">
+                
+                <a href="rsp_code.html" class="navigation navigation-next " aria-label="Next page: 响应返回码">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -238,7 +336,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"分类编码","level":"1.2","depth":1,"path":"ins_code.md","ref":"ins_code.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-05-06T08:33:23.213Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T08:33:39.716Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"回调参数","level":"1.4","depth":1,"next":{"title":"响应返回码","level":"1.5","depth":1,"path":"rsp_code.md","ref":"rsp_code.md","articles":[]},"previous":{"title":"请求参数","level":"1.3","depth":1,"path":"req_params.md","ref":"req_params.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"callback_data.md","mtime":"2020-04-18T06:47:04.956Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-06T08:33:39.716Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
